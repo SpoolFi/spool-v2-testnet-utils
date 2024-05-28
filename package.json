@@ -1,0 +1,28 @@
+{
+  "name": "spool-v2-testnet-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dhw": "ts-node src/modules/dhw/main.ts",
+    "mint": "ts-node src/modules/minter/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SpoolFi/spool-v2-dhw-testnet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpoolFi/spool-v2-dhw-testnet/issues"
+  },
+  "homepage": "https://github.com/SpoolFi/spool-v2-dhw-testnet#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12"
+  }
+}
