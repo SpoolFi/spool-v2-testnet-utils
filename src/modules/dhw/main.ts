@@ -40,7 +40,9 @@ export async function executeDhw() {
     const swapInfo = [ [ [] ], [ [] ], [ [] ], [ [] ] ];
     const compoundSwapInfo = [ [ [] ], [ [] ], [ [] ], [ [] ] ];
     const strategySlippages = [ [ [] ], [ [] ], [ [] ], [ [] ] ];
-    const baseYields = [[], [], [], []];
+    const baseYields = [
+        ["0"],["0"],["0"],["0"]
+    ];
 
     const tokens = [
         constants["assets"]["dai"]["address"],
