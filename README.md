@@ -6,6 +6,18 @@
 - `cp .env.sample .env`
 - fill in `PROVIDER` field in `.env` with the Sepolia RPC provider
 
+
+## Module: Full (Sync->Flush->DoHardWork-Sync)
+- Performs the full execution flow; ie. performs flush, sync and doHardWork in the right order. Following execution
+of this module, all vaults specified will be flushed and synced, and all your strategies will be doHardWorked.
+- The individual modules (`flush`, `sync`, `dhw`) can be executed if you need to manage an individual module, but in most cases you likely want to execute the full flow.
+
+### Instructions
+- Request strategy generation from, and give address for `DoHardWorker` role to, the Spool team
+- Update `.env` with strategy addresses and `PRIVATE_KEY` for `DoHardWorker` address
+- Prepare list of vaults
+- `npm run full {SMART_VAULT_A} {SMART_VAULT_B}...` - for all smart vaults
+
 ## Module: DoHardWork
 - Performs `DoHardWork` for strategies specified.
 
@@ -13,6 +25,22 @@
 - Request strategy generation from, and give address for `DoHardWorker` role to, the Spool team
 - Update `.env` with strategy addresses and `PRIVATE_KEY` for `DoHardWorker` address
 - `npm run dhw`
+
+## Module: Flush
+- Performs `flush` for the vaults specified via CLI.
+
+### Instructions
+- Update `.env` with strategy addresses and `PRIVATE_KEY` of address to execute transactions
+- Prepare list of vaults
+- `npm run flush {SMART_VAULT_A} {SMART_VAULT_B}...` - for all smart vaults to flush
+
+## Module: Sync
+- Performs `sync` for the vaults specified via CLI.
+
+### Instructions
+- Update `.env` with strategy addresses and `PRIVATE_KEY` of address to execute transactions
+- Prepare list of vaults
+- `npm run sync {SMART_VAULT_A} {SMART_VAULT_B}...` - for all smart vaults to sync
 
 ## Module: Minter
 - Mints 1m of each asset group token to the provided address.

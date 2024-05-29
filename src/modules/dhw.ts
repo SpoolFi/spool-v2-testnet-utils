@@ -1,9 +1,9 @@
 require('dotenv').config();
 import { BigNumber, ethers } from 'ethers';
-import IStrategyRegistry from "../../abi/IStrategyRegistry.json";
-import contracts from '../../deploy/sepolia.contracts.json';
-import constants from '../../deploy/sepolia.constants.json';
-import {chainlinkOnChainExchangeRates} from './helpers/ExchangeRates';
+import IStrategyRegistry from "../abi/IStrategyRegistry.json";
+import contracts from '../deploy/sepolia.contracts.json';
+import constants from '../deploy/sepolia.constants.json';
+import {chainlinkOnChainExchangeRates} from './_common';
 
 type SwapInfo = {
     swapTarget: string;
@@ -22,7 +22,7 @@ type DhwParameters = {
     validUntil: BigNumber;
 };
 
-export async function executeDhw() {
+export async function dhw() {
     const PROVIDER = process.env.PROVIDER;
     const provider = new ethers.providers.JsonRpcProvider(PROVIDER);
 
@@ -40,8 +40,9 @@ export async function executeDhw() {
     const swapInfo = [ [ [] ], [ [] ], [ [] ], [ [] ] ];
     const compoundSwapInfo = [ [ [] ], [ [] ], [ [] ], [ [] ] ];
     const strategySlippages = [ [ [] ], [ [] ], [ [] ], [ [] ] ];
+    const baseYield = BigNumber.from(0);
     const baseYields = [
-        ["0"],["0"],["0"],["0"]
+        [baseYield],[baseYield],[baseYield],[baseYield]
     ];
 
     const tokens = [
@@ -83,4 +84,3 @@ export async function executeDhw() {
 
     console.log('DHW executed successfully.');
 }
-executeDhw();

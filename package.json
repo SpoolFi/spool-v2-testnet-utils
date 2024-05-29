@@ -2,11 +2,12 @@
   "name": "spool-v2-testnet-utils",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dhw": "ts-node src/modules/dhw/main.ts",
-    "mint": "ts-node src/modules/minter/main.ts"
+    "dhw": "ts-node src/modules/main.ts 'dhw'",
+    "mint": "ts-node src/modules/main.ts 'mint'",
+    "flush": "ts-node src/modules/main.ts 'flush'",
+    "sync": "ts-node src/modules/main.ts 'sync'",
+    "full": "ts-node src/modules/main.ts 'full'"
   },
   "repository": {
     "type": "git",

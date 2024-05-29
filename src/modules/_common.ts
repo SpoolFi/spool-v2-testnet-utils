@@ -1,7 +1,20 @@
 import { BigNumber, ethers } from 'ethers';
-import IERC20 from "../../../abi/IERC20.json";
-import IPriceFeedManager from "../../../abi/IPriceFeedManager.json";
-import contracts from '../../../deploy/sepolia.contracts.json';
+import IERC20 from "../abi/IERC20.json";
+import IPriceFeedManager from "../abi/IPriceFeedManager.json";
+import contracts from '../deploy/sepolia.contracts.json';
+
+export async function readVaults() : Promise<string[]> {
+    let vaults : string[] = [];
+    // read vaults from process.argv
+    for (let i = 3; i < process.argv.length; i++) {
+        vaults.push(process.argv[i]);
+    }
+    if (vaults.length == 0) {
+        throw new Error("Error: No vaults addresses received.");
+    }
+
+    return vaults;
+}
 
 export async function chainlinkOnChainExchangeRates(
     tokens: string[],

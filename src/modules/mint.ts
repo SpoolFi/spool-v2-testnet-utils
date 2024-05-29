@@ -1,7 +1,7 @@
 require('dotenv').config();
 import { BigNumber, ethers } from 'ethers';
-import IERC20Mintable from "../../abi/IERC20Mintable.json";
-import constants from '../../deploy/sepolia.constants.json';
+import IERC20Mintable from "../abi/IERC20Mintable.json";
+import constants from '../deploy/sepolia.constants.json';
 
 export async function mint() {
     const PROVIDER = process.env.PROVIDER;
@@ -25,4 +25,3 @@ export async function mint() {
         console.log(`Minted 1m ${await token.symbol()} to ${signer.address}.`);
     }
 }
-mint();
