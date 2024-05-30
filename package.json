@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dhw": "ts-node src/modules/main.ts 'dhw'",
-    "mint": "ts-node src/modules/main.ts 'mint'",
-    "flush": "ts-node src/modules/main.ts 'flush'",
-    "sync": "ts-node src/modules/main.ts 'sync'",
-    "full": "ts-node src/modules/main.ts 'full'"
+    "dhw": "ts-node src/modules/main.ts dhw",
+    "mint": "ts-node src/modules/main.ts mint",
+    "flush": "ts-node src/modules/main.ts flush",
+    "sync": "ts-node src/modules/main.ts sync",
+    "full": "ts-node src/modules/main.ts full"
   },
   "repository": {
     "type": "git",
