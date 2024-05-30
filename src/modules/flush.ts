@@ -16,8 +16,16 @@ export async function _flush(vaults: string[]) {
     
     for (let i = 0; i < vaults.length; i++) {
         console.log(`Flushing vault ${vaults[i]}...`);
-        const tx = await smartVaultManager.flushSmartVault(vaults[i]);
-        await tx.wait();
+        try {
+            const tx = await smartVaultManager.flushSmartVault(vaults[i]);
+            await tx.wait();
+        } catch (e) {
+            if (e.message.includes("eb694a3c")) {
+                console.log(`Nothing to flush for vault ${vaults[i]}`);
+            } else {
+                throw e;
+            }
+        }
     }
     console.log(`Flushed vaults.`);
 }

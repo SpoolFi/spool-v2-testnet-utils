@@ -14,10 +14,19 @@ export async function _sync(vaults: string[]) {
         contracts["SmartVaultManager"]["proxy"], ISmartVaultManager, signer
     );
     
+    console.log(`Syncing vaults: ${vaults}`);
     for (let i = 0; i < vaults.length; i++) {
         console.log(`Syncing vault ${vaults[i]}...`);
-        const tx = await smartVaultManager.syncSmartVault(vaults[i], true);
-        await tx.wait();
+        try {
+            const tx = await smartVaultManager.syncSmartVault(vaults[i], true);
+            await tx.wait();
+        } catch (e) {
+            if (e.message.includes("cbf261db")) {
+                console.log(`Nothing to sync for vault ${vaults[i]}`);
+            } else {
+                throw e;
+            }
+        }
     }
     console.log(`Synced vaults.`);
 }
