@@ -31,10 +31,10 @@ export async function dhw() {
     );
 
     const strategies = [
-        [ process.env.MOCK_DAI ],
-        [ process.env.MOCK_USDC ],
-        [ process.env.MOCK_USDT ],
-        [ process.env.MOCK_WETH ],
+        [ process.env.STRATEGY_MOCK_DAI ],
+        [ process.env.STRATEGY_MOCK_USDC ],
+        [ process.env.STRATEGY_MOCK_USDT ],
+        [ process.env.STRATEGY_MOCK_WETH ],
     ]
 
     const swapInfo = [ [ [] ], [ [] ], [ [] ], [ [] ] ];
