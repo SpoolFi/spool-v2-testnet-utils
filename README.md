@@ -48,3 +48,12 @@ of this module, all vaults specified will be flushed and synced, and all your st
 ### Instructions
 - Update `.env` with `PRIVATE_KEY` of address to send `mint` transactions and receive minted tokens
 - `npm run mint`
+
+
+## Module: WETH
+- Deposits provided amount if ETH to the WETH contract, mints WETH to signer. 
+
+### Instructions
+- Update `.env` with `PRIVATE_KEY` of address to send transactions and receive `weth` tokens
+- `npm run weth {AMOUNT}` - where $AMOUNT is the amount of ETH to deposit, as a formatted string (eg. `0.01`)
+- Ensure that the signer address has enough ETH to deposit, along with gas fees necessary.
