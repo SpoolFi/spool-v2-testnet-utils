@@ -22,6 +22,8 @@ export async function _flush(vaults: string[]) {
         } catch (e) {
             if (e.message.includes("eb694a3c")) {
                 console.log(`Nothing to flush for vault ${vaults[i]}`);
+            } else if(e.message.includes("835fa209")) {
+                console.log("vault not synced..");
             } else {
                 throw e;
             }
