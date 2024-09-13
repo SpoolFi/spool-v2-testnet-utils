@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "generate-types": "typechain --target ethers-v5 --out-dir src/contracts './src/abi/*.json'",
     "dhw": "ts-node src/modules/_main.ts dhw",
     "flush": "ts-node src/modules/_main.ts flush",
     "full": "ts-node src/modules/_main.ts full",
     "mint": "ts-node src/modules/_main.ts mint",
     "sync": "ts-node src/modules/_main.ts sync",
+    "mv-flush": "ts-node src/modules/_main.ts mv-flush",
+    "mv-sync": "ts-node src/modules/_main.ts mv-sync",
+    "mv-reallocate": "ts-node src/modules/_main.ts mv-reallocate",
+    "mv-reallocate-sync": "ts-node src/modules/_main.ts mv-reallocate-sync",
+    "mv-full": "ts-node src/modules/_main.ts mv-full",
+    "mv-full-reallocate": "ts-node src/modules/_main.ts mv-full-reallocate",
     "weth": "ts-node src/modules/_main.ts weth"
   },
   "repository": {
@@ -22,9 +29,11 @@
   "homepage": "https://github.com/SpoolFi/spool-v2-dhw-testnet#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "ethers": "^5.7.2"
+    "ethers": "^5.7.2",
+    "typechain": "^8.3.2"
   },
   "devDependencies": {
+    "@typechain/ethers-v5": "^11.1.2",
     "@types/node": "^20.12.12"
   }
 }

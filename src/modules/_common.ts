@@ -16,6 +16,14 @@ export async function readVaults() : Promise<string[]> {
     return vaults;
 }
 
+export async function readMetaVault() : Promise<string> {
+    if (process.argv[3] === undefined) {
+        throw new Error("Error: No MetaVault address received.");
+
+    }
+    return process.argv[3];
+}
+
 export async function chainlinkOnChainExchangeRates(
     tokens: string[],
     provider: ethers.providers.JsonRpcProvider
