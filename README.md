@@ -3,6 +3,7 @@
 # Installation
 
 - `npm install`
+- `npm run generate-types`
 - `cp .env.sample .env`
 - fill in `PROVIDER` field in `.env` with the Sepolia RPC provider
 
