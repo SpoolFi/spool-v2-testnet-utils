@@ -7,7 +7,10 @@ import {readVaults} from "./_common";
 
 export async function full() {
     const vaults = await readVaults();
+    fullSmartVaults(vaults);
+}
 
+export const fullSmartVaults = async (vaults: string[]) => {
     // sync -> flush -> dhw -> sync, ignoring potential inital sync issues, executes the full flow. 
     console.log("Stage 1: Sync vaults..");
     await _sync(vaults);
