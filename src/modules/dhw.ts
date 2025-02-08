@@ -47,7 +47,7 @@ export async function dhw() {
 
     const tokens = [
         constants["assets"]["dai"]["address"],
-        constants["assets"]["usdc"]["address"],
+        constants["assets"]["usdc2"]["address"],
         constants["assets"]["usdt"]["address"],
         constants["assets"]["weth"]["address"]
     ]

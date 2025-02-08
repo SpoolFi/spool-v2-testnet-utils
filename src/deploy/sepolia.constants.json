@@ -27,25 +27,36 @@
                 "address": "0x694AA1769357215DE4FAC081bf1f309aDC325306",
                 "timeLimit": 3780
             }
+        },
+        "usdc2": {
+            "address": "0x7e346eCEfcb876De8C6E21075267bfD5aC90c708",
+            "priceAggregator": {
+                "address": "0xA2F78ab2355fe2f984D808B5CeE7FD0A93D5270E",
+                "timeLimit": 86580
+            }
         }
     },
     "strategies": {
-        "mock": {
+        "mock2": {
             "dai": {
-                "apy": 70000000000,
-                "rewardTokenPerSecond": "20000000000000000"
+                "apyProtocol": 800,
+                "apy": 80000000000,
+                "address": "0x01Ec22250E666c68157fdEa5Ca38BFd7F7Ab11b6"
             },
             "usdc": {
-                "apy": 70000000000,
-                "rewardTokenPerSecond": "20000"
+                "apyProtocol": 800,
+                "apy": 80000000000,
+                "address": "0x8Bb6b3cdE058d0e9B158787F7E7dE29b154C446C"
             },
             "usdt": {
-                "apy": 70000000000,
-                "rewardTokenPerSecond": "20000"
+                "apyProtocol": 800,
+                "apy": 80000000000,
+                "address": "0x4f080E5AEdd2D8CDD78E56FE924f9E94a6B8C238"
             },
-            "weth": {
-                "apy": 70000000000,
-                "rewardTokenPerSecond": "20000000000000000"
+            "usdc2": {
+                "apyProtocol": 800,
+                "apy": 80000000000,
+                "address": "0x581E6a4a29Baf520119a32C66AaF60413cf11B9D"
             }
         }
     },
