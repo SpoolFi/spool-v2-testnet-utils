@@ -25,8 +25,6 @@ export async function _sync(vaults: string[]) {
                 console.log(`Nothing to sync for vault ${vaults[i]}`);
             } else if(e.message.includes("751077a3")) {
                 console.log(`DHW not run yet for index..`);
-            } else {
-                throw e;
             }
         }
     }
