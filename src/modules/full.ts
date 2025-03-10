@@ -1,8 +1,8 @@
 require('dotenv').config()
 
 import {dhw} from "./dhw";
-import {_flush} from "./flush";
-import {_sync} from "./sync";
+import {_flush} from "./flush_simulate";
+import {_sync} from "./sync_simulate";
 import {readVaults} from "./_common";
 
 export async function full() {
